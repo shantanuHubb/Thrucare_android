@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.patient.profile.ProfileInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="Profile" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/light_gray"
+        android:layout_height="2dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/imageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"
+                android:background="@drawable/customer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_prifile_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email Id"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Johnone@xyz.com"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="DOB"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="01-09-1980"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Identifier"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_identifier"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1122334499"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Language"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_language"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="English"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1234 One St One Raleigh USA"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_qualification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Qualification"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5" />
+
+                <TextView
+                    android:id="@+id/tv_profile_qualification"
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight=".5">
+                </TextView>
+            </LinearLayout>
+
+            <View
+                android:visibility="gone"
+                android:id="@+id/viewBelowQualification"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Insurance"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <TextView
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_insuarance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight=".5">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_signature"
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Signature"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tv_profile_signature"
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight=".5">
+
+                </TextView>
+
+            </LinearLayout>
+            <View
+                android:id="@+id/viewBelowSignature"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvEmergencyContcat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency Contact"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <TextView
+                    android:id="@+id/tv_profile_emergency_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight=".5">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewBelowEmergenyContact"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Group"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:layout_weight=".5"></TextView>
+
+                <EditText
+                    android:background="@drawable/edittext_background_white"
+                    android:id="@+id/tv_profile_blood_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Blood group"
+                    android:textSize="14sp"
+                    android:gravity="end"
+                    android:textColor="@color/light_gray"
+                    android:layout_weight=".5">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_gray"
+                android:layout_height="2dp" />
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:background="@drawable/round_shape_for_blue"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Update Profile"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

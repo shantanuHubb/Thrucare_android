@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/ffm_attachment_layout"
+        android:layout_width="0dp"
+        android:layout_weight=".9"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/spinner_reason_attachment"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:editable="false"
+            android:clickable="true"
+            android:background="@drawable/edittext_background"
+            android:hint="Attachment"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:padding="10dp" />
+
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:layout_gravity="end"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/round_shape_for_blue"
+            android:layout_marginTop="20dp"
+            android:text="Upload" />
+
+
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/img_plus_attachment"
+        android:layout_width="0dp"
+        android:layout_weight=".1"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/plus"
+        android:layout_height="wrap_content" />
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/spinner_reason_allergires"
+            android:layout_width="0dp"
+            android:layout_weight=".9"
+            android:layout_height="45dp"
+            android:editable="false"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Attachment"
+            android:maxLength="25"
+            android:layout_marginEnd="10dp"
+            android:maxLines="1"
+            android:padding="10dp" />
+
+
+    </LinearLayout>-->
+
+</LinearLayout>

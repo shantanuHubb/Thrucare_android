@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".activity.patient.bookAppointment.ScheduleAppointmentActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="6"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".1"
+            android:background="@drawable/circle_back_color_accent"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"></TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".35"
+            android:background="@color/black"></View>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".1"
+            android:background="@drawable/circle_back_color_accent"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/white"></TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".35"
+            android:background="@color/black"></View>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".1"
+            android:background="@drawable/circle_white_back_stoke"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/colorAccent"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".33"
+            android:text="Service"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".33"
+            android:gravity="center"
+            android:text="Availablity"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight=".33"
+            android:gravity="end"
+            android:text="Confirm"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_month_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Month and year"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black" />
+
+    <sun.bob.mcalendarview.views.ExpCalendarView
+        android:id="@+id/calendra_view"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+</LinearLayout>
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/lln_time_slot"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:text="@string/time_slot" />
+                <GridView
+                    android:id="@+id/grid_view_time_slot"
+                    android:layout_width="match_parent"
+                    android:numColumns="5"
+                    android:layout_margin="20dp"
+                    android:clipToPadding="true"
+                    android:fitsSystemWindows="true"
+                    android:layout_height="wrap_content" />
+
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/spinner_location_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/edittext_background"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:padding="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/btn_schedule_proceed"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight=".5"
+            android:background="@drawable/round_shape_for_blue"
+            android:gravity="center"
+            android:text="Schedule"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

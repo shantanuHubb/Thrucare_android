@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight=".5"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/electronic_signature"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/light_gray" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7.5"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Signature"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+     <LinearLayout
+         android:id="@+id/ClearButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="end"
+         android:layout_marginEnd="30dp"
+         android:orientation="vertical">
+         <ImageView
+             android:layout_margin="20dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginEnd="40dp"
+             android:background="@drawable/delete" />
+     </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <android.gesture.GestureOverlayView
+                    android:id="@+id/signaturePad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:clickable="false"
+                    android:eventsInterceptionEnabled="true"
+                    android:fadeEnabled="false"
+                    android:fadeOffset="10000000"
+                    android:gestureColor="@color/colorAccent"
+                    android:gestureStrokeLengthThreshold="0.1"
+                    android:gestureStrokeType="multiple"
+                    android:longClickable="false"
+                    android:orientation="vertical"
+                    android:splitMotionEvents="true"
+                    android:uncertainGestureColor="#000000" />
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rellay_esign_donebutton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/DoneButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:text="Submit" />
+    </LinearLayout>
+
+</LinearLayout>

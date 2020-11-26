@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#334D85</color>
+    <color name="colorPrimaryDark">#334D85</color>
+    <color name="colorAccent">#334D85</color>
+    <color name="text_bottom_sheet_color">#5788F1</color>
+    <color name="light_gray">#D1D2D3</color>
+    <color name="light_gray_more">#EDEDED</color>
+    <color name="light_gray_more1">#FAF8F8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="forget_password_text">#F1F1F1</color>
+    <color name="black">#121212</color>
+    <color name="light_green">#9BD855</color>
+    <color name="transparent">#80000000</color>
+    <color name="thanks_back">#80E3E0F8</color>
+    <color name="rating_active">#FFF</color>
+    <color name="rating_deactive">#FDD835</color>
+    <color name="orange">#FF6600</color>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/colorAccent"
+    tools:context=".activity.commanActivity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginBottom="50dp"
+                android:layout_marginStart="25dp"
+                android:paddingBottom="30dp"
+                android:layout_marginEnd="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/logothrucare"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/registration" />
+
+                <TextView
+                    android:id="@+id/tv_for_whom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/for_patient" />
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/first_name"
+
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edit_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:hint="@string/enter_first_name"
+                    android:maxLength="25"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/middle_name"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edit_middle_name"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:hint="@string/enter_middle_name"
+                    android:maxLength="25"
+                    android:layout_height="45dp" />
+
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/last_name"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edit_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:hint="@string/enter_last_name"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:maxLength="25"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/email"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edit_enter_email"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:hint="@string/enter_email"
+                    android:maxLength="50"
+                    android:layout_height="45dp" />
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="Mobile Number"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--<com.lamudi.phonefield.PhoneInputLayout
+                        android:id="@+id/phone_input_layout"
+                        android:layout_width="0dp"
+                        android:background="@color/white"
+                        android:layout_weight=".2"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content" />-->
+                    <!--<com.lamudi.phonefield.PhoneEditText
+                        android:id="@+id/edit_text"
+                        android:layout_width="0dp"
+                        android:inputType="number"
+                        android:paddingStart="10dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/edittext_background"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />-->
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/date_of_birth"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:id="@+id/edit_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:hint="@string/select_of_birth"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:maxLength="25" />
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:text="@string/gender"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/edit_gender"
+                    android:editable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:hint="@string/select_gender"
+                    android:background="@drawable/edittext_background"
+                    android:maxLines="1"
+                    android:maxLength="25" />
+                <Button
+                    android:id="@+id/btn_registration"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/signin_button_shape"
+                    android:text="@string/registration"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/btn_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/signin_button_shape"
+            android:text="@string/registration"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>-->
+</LinearLayout>

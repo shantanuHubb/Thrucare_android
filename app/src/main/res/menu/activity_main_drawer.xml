@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:iconTint="@color/white"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/appointments"
+            android:title="@string/my_appointments" />
+        <item
+            android:id="@+id/nav_diagnosis"
+            android:icon="@drawable/diagnosis"
+            android:title="@string/diagnosis" />
+
+        <item
+            android:id="@+id/nav_medication"
+            android:icon="@drawable/medication"
+            android:title="@string/medications" />
+        <item
+            android:id="@+id/nav_allergies"
+            android:icon="@drawable/allergies"
+            android:title="@string/allergies" />
+
+        <item
+            android:id="@+id/nav_social_history"
+            android:icon="@drawable/socialhistory"
+            android:title="@string/social_history" />
+
+        <item
+            android:id="@+id/nav_family_history"
+            android:icon="@drawable/familyhistory"
+            android:title="@string/family_history" />
+
+
+        <item
+            android:id="@+id/nav_medical_report"
+            android:icon="@drawable/medical_report"
+            android:title="@string/medical_report" />
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/order"
+            android:title="@string/orders" />
+
+
+        <item
+            android:id="@+id/nav_dependents"
+            android:icon="@drawable/dependent"
+            android:title="@string/dependents" />
+        <item
+            android:id="@+id/nav_preference"
+            android:icon="@drawable/preference"
+            android:title="@string/preference" />
+        <item
+            android:id="@+id/nav_immunization"
+            android:icon="@drawable/logout"
+            android:title="@string/immunization" />
+
+
+        <item
+            android:id="@+id/nav_provider_appointments"
+            android:icon="@drawable/familyhistory"
+            android:title="@string/appointments" />
+
+
+        <item
+            android:id="@+id/nav_provider_service"
+            android:icon="@drawable/appointments"
+            android:title="@string/service" />
+        <item
+            android:id="@+id/nav_provider_availability"
+            android:icon="@drawable/allergies"
+            android:title="@string/availability" />
+
+
+        <item
+            android:id="@+id/nav_provider_staff"
+            android:icon="@drawable/socialhistory"
+            android:title="@string/staff" />
+        <item
+            android:id="@+id/nav_provider_profile"
+            android:icon="@drawable/dependent"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_provider_setting"
+            android:icon="@drawable/preference"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
+
+    </group>
+</menu>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thrucare.healthcare">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.provider.insurance.InsuranceListActivity"></activity>
+        <activity android:name=".activity.provider.quotation.QuotationListActivity"></activity>
+        <activity android:name=".awsChime.VideoActivity" />
+        <activity android:name=".activity.patient.bookAppointment.StepOneAppointmentActivity" />
+        <activity android:name=".activity.provider.addReferralOrder.AddNewReferralActivity" />
+        <activity android:name=".activity.patient.profile.EmergencyContactActivity" />
+        <activity android:name=".activity.provider.addImnunization.AddNewImmunizationActivity" />
+        <activity android:name=".activity.patient.immunization.ImmunizationActivity" />
+        <activity android:name=".activity.provider.addVision.EyeVisionActivity" />
+        <activity android:name=".activity.provider.addVision.AddNewVisionActivity" />
+        <activity android:name=".activity.patient.vision.VisionListActivity" />
+        <activity android:name=".activity.provider.deviceOrder.AddNewDeviceOrderActivity" />
+        <activity android:name=".activity.patient.deviceOrder.DeviceOrderActivity" />
+        <activity android:name=".activity.provider.insurance.AddNewInsuranceActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.provider.qualification.AddNewQualificationActivity" />
+        <activity android:name=".activity.provider.qualification.QualificationListActivity" />
+        <activity android:name=".activity.provider.DigitalSignatureActivity" />
+        <activity android:name=".activity.patient.payForBookingAppointtment.ConfirmAppointmentCheckOutActivity" />
+        <activity android:name=".activity.patient.providerReview.ProviderReviewActivity" />
+        <activity android:name=".activity.provider.ConfirmAppontmentProviderActivity" />
+        <activity android:name=".activity.patient.profile.ProfileInfoActivity" />
+        <activity android:name=".activity.provider.orders.AddLabTestActivity" />
+        <activity android:name=".activity.provider.AddMedicalReportActivity" />
+        <activity android:name=".activity.provider.orders.AddMedicationActivity" />
+        <activity android:name=".activity.patient.order.OrdersSubModuleActivity" />
+        <activity android:name=".activity.patient.patientQuestionnaire.QuestionActivity" />
+        <activity android:name=".activity.patient.patientQuestionnaire.QuestionnaireActivity" />
+        <activity android:name=".activity.patient.bookAppointment.SuccessBookApppointmentActivity" />
+        <activity android:name=".activity.patient.bookAppointment.ConfirmAppointmentActivity" />
+        <activity android:name=".activity.patient.bookAppointment.ScheduleAppointmentActivity" />
+        <activity android:name=".activity.patient.bookAppointment.CurrentLocationActivity" />
+        <activity android:name=".activity.patient.bookAppointment.BookAppointmentActivity" />
+        <activity android:name=".activity.patient.bookAppointment.ProviderDetailActivity" />
+        <activity android:name=".activity.patient.bookAppointment.LocationSearchActivity" />
+        <activity android:name=".activity.patient.bookAppointment.LocationScreenActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <activity
+            android:name=".activity.patient.bookAppointment.MapsActivity"
+            android:label="@string/title_activity_maps" />
+
+        <activity android:name=".activity.patient.bookAppointment.ProviderFilterActivity" />
+        <activity android:name=".activity.provider.AllergiesSearchActivity" />
+        <activity
+            android:name=".activity.provider.EvidenceMedicalActivity"
+            android:parentActivityName=".activity.provider.AddDiagnosisActivity" />
+        <activity
+            android:name=".activity.provider.AllergiesReportProviderActivity"
+            android:parentActivityName=".activity.provider.PatientInfoActivity" />
+        <activity
+            android:name=".activity.provider.MedicationProviderActivity"
+            android:parentActivityName=".activity.provider.PatientInfoActivity" />
+        <activity android:name=".activity.provider.DiagnosisResultSearchActivity" />
+        <activity
+            android:name=".activity.provider.AddDiagnosisActivity"
+            android:parentActivityName=".activity.provider.PatientInfoActivity" />
+        <activity android:name=".activity.provider.PatientInfoActivity" />
+        <activity
+            android:name=".activity.provider.AddFamilyHistoryActivity"
+            android:label="Add Family History" />
+        <activity
+            android:name=".activity.commanActivity.PatientHomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.commanActivity.OnBoardingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.commanActivity.RegistrationActivity" />
+        <activity android:name=".activity.commanActivity.LoginActivity" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+</manifest>

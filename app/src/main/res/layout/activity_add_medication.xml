@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".activity.provider.orders.AddMedicationActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.5"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".7"
+                android:gravity="center"
+                android:text="@string/order_medication"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/light_gray" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="70dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/medication"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_medication_order"
+                    android:editable="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="@string/medication"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Reason"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMedicationReaction_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Dosage"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edt_medication_dosage"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Dosage"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Dispensation"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:orientation="horizontal">
+
+               <EditText
+                   android:id="@+id/edt_despensation_quantity"
+                   android:layout_width="0dp"
+                   android:layout_weight=".5"
+                   android:layout_height="match_parent"
+                   android:layout_marginTop="10dp"
+                   android:clickable="true"
+                   android:background="@drawable/edittext_background"
+                   android:hint="Quantity"
+                   android:maxLength="25"
+                   android:layout_marginEnd="10dp"
+                   android:maxLines="1"
+                   android:padding="10dp" />
+
+               <EditText
+                   android:id="@+id/edt_despensation_refills"
+                   android:layout_width="0dp"
+                   android:layout_weight=".5"
+                   android:layout_marginStart="10dp"
+                   android:layout_height="match_parent"
+                   android:layout_marginTop="10dp"
+                   android:clickable="true"
+                   android:background="@drawable/edittext_background"
+                   android:hint="Refills"
+                   android:maxLength="25"
+                   android:maxLines="1"
+                   android:padding="10dp" />
+
+           </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/date_medication_provider_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:editable="false"
+                    android:clickable="true"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Onset Date"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Status"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_status_medication_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Status"
+                    android:maxLength="25"
+                    android:maxLines="1"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1.5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_add_more_medication"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight=".5"
+                android:background="@drawable/round_shape_for_blue"
+                android:gravity="center"
+                android:text="Add more"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_save_add_medication_report"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight=".5"
+                android:background="@drawable/round_shape_white_colo"
+                android:gravity="center"
+                android:text="Save Changes"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

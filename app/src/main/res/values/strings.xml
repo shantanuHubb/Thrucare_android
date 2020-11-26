@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">Thrucare</string>
+
+
+    <!-- Home Screen  -->
+    <string name="sign_in">SignIn</string>
+    <string name="for_patient">For Patient</string>
+    <string name="email_username">Email or UserName</string>
+    <string name="enter_email_username">Enter Email or UserName</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="login_with_biometric">Login with Biometric</string>
+
+
+    <!--  Registration Screen  -->
+
+    <string name="registration">Registration</string>
+    <string name="first_name">First Name</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="enter_middle_name">Enter Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="date_of_birth">Date of Birth *</string>
+    <string name="select_of_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="medications">Medications</string>
+    <string name="allergies">Allergies</string>
+    <string name="social_history">Social History</string>
+    <string name="family_history">Family History</string>
+    <string name="medical_report">Medical Reports</string>
+    <string name="orders">Order</string>
+    <string name="dependents">Dependents</string>
+    <string name="preference">Preference</string>
+    <string name="immunization">Immunization</string>
+    <string name="logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_family_history">AddFamilyHistoryActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_provider_home">ProviderHomeActivity</string>
+    <string name="appointments">Appointments</string>
+    <string name="service">Service</string>
+    <string name="availability">Availability</string>
+    <string name="staff">Staff</string>
+    <string name="profile">Profile</string>
+    <string name="appointment">Appointment</string>
+    <string name="medication_report">Medication Report</string>
+    <string name="medication">Medication</string>
+    <string name="reaction">Reaction</string>
+    <string name="allergies_report">Allergies Report</string>
+    <string name="provider_list">Provider List</string>
+    <string name="category">Category</string>
+    <string name="type">Type</string>
+    <string name="schedule">Schedule</string>
+    <string name="characteristic">Characteristic</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="location">Location</string>
+    <string name="dummy_content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="appointment_filter">Appointment Filter</string>
+    <string name="username">username</string>
+    <string name="password_1">password</string>
+    <string name="application_json">application/json</string>
+    <string name="login">login</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="time_slot">Time slot</string>
+    <string name="questionnaire">Questionnaire</string>
+    <string name="question_list">Question List</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="empty_value">Empty Value</string>
+    <string name="order_medication">Order Medication</string>
+    <string name="add_medical_report">Add Medical Report</string>
+
+    <string name="confirm_appointment">Confirm</string>
+    <string name="performer">performer</string>
+    <string name="procedure">procedure</string>
+    <string name="reason">reason</string>
+    <string name="status">status</string>
+    <string name="created_date">created_date</string>
+    <string name="provider">provider</string>
+    <string name="notes">notes</string>
+
+    <!--update profile-->
+    <string name="update_identifier">identifier</string>
+    <string name="update_first_name">first_name</string>
+    <string name="update_middle_name">middle_name</string>
+    <string name="update_last_name">last_name</string>
+    <string name="update_email">email</string>
+    <string name="update_phone">phone</string>
+    <string name="update_gender">gender</string>
+    <string name="update_dob">birth_date</string>
+    <string name="electronic_signature">Electronic Signature</string>
+    <string name="add_qualification">Add Qualification</string>
+    <string name="payer">Payer</string>
+    <string name="product">Product</string>
+
+    <!--patient home Activity-->
+    <string name="name">name</string>
+    <string name="phone">phone</string>
+    <string name="dob">dob</string>
+    <string name="identifier">identifier</string>
+    <string name="address">address</string>
+    <string name="blood_group">blood_group</string>
+</resources>

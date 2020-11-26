@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.thrucare.healthcare.activity.patient.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.thrucare.healthcare.activity.patient.myAppointment.MyAppointmentFragment"
+        android:label="My Appointments"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_diagnosis"
+        android:name="com.thrucare.healthcare.activity.patient.diagnosis.DiagnosisFragment"
+        android:label="Diagnosis"
+        tools:layout="@layout/fragment_diagnosis" />
+
+    <fragment
+        android:id="@+id/nav_medication"
+        android:name="com.thrucare.healthcare.activity.patient.medications.MedicationFragment"
+        android:label="Medication"
+        tools:layout="@layout/fragment_medication" />
+
+    <fragment
+        android:id="@+id/nav_allergies"
+        android:name="com.thrucare.healthcare.activity.patient.allergies.AllergiesFragment"
+        android:label="Allergies"
+        tools:layout="@layout/fragment_allergies" />
+
+    <fragment
+        android:id="@+id/nav_family_history"
+        android:name="com.thrucare.healthcare.activity.patient.familyHistory.FamilyHistoryFragment"
+        android:label="Family History"
+        tools:layout="@layout/fragment_family_history" />
+
+    <fragment
+        android:id="@+id/nav_social_history"
+        android:name="com.thrucare.healthcare.activity.patient.socialHistory.SocialHistoryFragment"
+        android:label="Social History"
+        tools:layout="@layout/fragment_social_history" />
+
+
+    <fragment
+        android:id="@+id/nav_provider_appointments"
+        android:name="com.thrucare.healthcare.activity.provider.providerAppointments.AppointmentFragment"
+        android:label="Appointment"
+        tools:layout="@layout/fragment_appointment" />
+
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.thrucare.healthcare.activity.patient.order.OrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_orders" />
+
+    <fragment
+        android:id="@+id/nav_medical_report"
+        android:name="com.thrucare.healthcare.activity.patient.medicalReport.MedicalReportFragment"
+        android:label="Medical Report"
+        tools:layout="@layout/fragment_medical_reportragment" />
+
+    <fragment
+        android:id="@+id/nav_dependents"
+        android:name="com.thrucare.healthcare.activity.patient.dependents.DependentsFragment"
+        android:label="Dependents"
+        tools:layout="@layout/fragment_dependents" />
+
+
+    <fragment
+        android:id="@+id/nav_immunization"
+        android:name="com.thrucare.healthcare.activity.patient.immunization.ImmunizationFragment"
+        android:label="Immunization"
+        tools:layout="@layout/fragment_immunization" />
+
+
+    <fragment
+        android:id="@+id/nav_provider_staff"
+        android:name="com.thrucare.healthcare.activity.provider.staff.StaffFragment"
+        android:label="Staff"
+        tools:layout="@layout/fragment_staff" />
+</navigation>

@@ -1,0 +1,27 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=78:79:D3:5A:89:56:0C:45:59:3B:7A:76:AD:CD:16:84:79:2C:5D:3F%3Bcom.thrucare.healthcare.fragment
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.thrucare.healthcare.fragment
+
+    SHA-1 certificate fingerprint:
+    78:79:D3:5A:89:56:0C:45:59:3B:7A:76:AD:CD:16:84:79:2C:5D:3F
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDlFZJYTItg1m_-XHfq4_R1-OvpR1jD2Y4</string>
+<!--
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDU-cE5tELeGLCi7c1jZ82JZltTiZ30QmE</string>
+-->
+</resources>
