@@ -161,9 +161,9 @@ public class PatientHomeActivity extends AppCompatActivity  {
 
                         .putExtra(getResources().getString(R.string.name), name)
                         .putExtra(getResources().getString(R.string.phone), obj.getPhone())
-                        .putExtra(getResources().getString(R.string.email), obj.getEmail())
+                        .putExtra("email", obj.getEmail())
                         .putExtra(getResources().getString(R.string.dob), dateToDisplay)
-                        .putExtra(getResources().getString(R.string.gender),obj.getGender().getDisplay())
+                        .putExtra("gender",obj.getGender().getDisplay())
                         .putExtra(getResources().getString(R.string.identifier),obj.getIdentifier().get(0).getValue())
                         .putExtra(getResources().getString(R.string.address),address)
                         .putExtra(getResources().getString(R.string.blood_group),obj.getBloodGroup().getDisplay())

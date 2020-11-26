@@ -13,21 +13,26 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.thrucare.healthcare.R;
 import com.thrucare.healthcare.activity.provider.DigitalSignatureActivity;
 import com.thrucare.healthcare.activity.provider.insurance.InsuranceListActivity;
 import com.thrucare.healthcare.activity.provider.qualification.QualificationListActivity;
 import com.thrucare.healthcare.databinding.ActivityProfileInfoBinding;
+import com.thrucare.healthcare.pojo.modelClasses.ProfilePatientResponse;
 import com.thrucare.healthcare.pojo.modelClasses.UpdateResponseProfile;
 import com.thrucare.healthcare.retrofit.ApiInterface;
+import com.thrucare.healthcare.retrofit.PatientApi.PatientUtils;
 import com.thrucare.healthcare.retrofit.RealApi.ProviderUtils;
 import com.thrucare.healthcare.utils.BaseUtils;
 import com.thrucare.healthcare.utils.ConstantsUtils;
 import com.thrucare.healthcare.utils.PreferenceUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +43,8 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
 
     private ActivityProfileInfoBinding binding;
     static ProfileInfoActivity activity;
-    private ApiInterface mAPiService;
+    private ApiInterface ProviderServiceApi;
+    private ApiInterface PatientServiceApi;
     private Calendar dateSelected = Calendar.getInstance();
     private String userType;
 
@@ -48,7 +54,8 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
         binding = ActivityProfileInfoBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         //mAPiService = ApiUtils.getApiService();
-        mAPiService = ProviderUtils.getService();
+        ProviderServiceApi = ProviderUtils.getService();
+        PatientServiceApi = PatientUtils.getPatientService();
         activity = this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
@@ -90,6 +97,7 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
         binding.tvProfileLanguage.setEnabled(false);
         //binding.tvProfileQualification.setEnabled(false);
         getProfileData();
+
     }
 
     private void getProfileData() {
@@ -101,8 +109,7 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
         String identifier = getIntent().getStringExtra("identifier");
         String address = getIntent().getStringExtra("address");
         String bloodGroup = getIntent().getStringExtra("blood_group");
-        String insurance = getIntent().getStringExtra("insurance");
-
+       // String insurance = getIntent().getStringExtra("insurance");
 
         binding.tvProfileName.setText(name);
         binding.tvPrifileContact.setText(phone);
@@ -112,7 +119,6 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
         binding.tvProfileIdentifier.setText(identifier);
         binding.tvProfileAddress.setText(address);
         binding.tvProfileBloodGroup.setText(bloodGroup);
-
 
 
         binding.btnEditProfile.setOnClickListener(new OnClickListener() {
@@ -126,6 +132,9 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
                 newEmail = binding.tvProfileEmail.getText().toString();
                 newDOB = binding.tvProfileDate.getText().toString();
                 newGender = binding.tvProfileGender.getText().toString();
+                newIdentifier = binding.tvProfileIdentifier.getText().toString();
+                newAddress = binding.tvProfileAddress.getText().toString();
+                newBloodGroup = binding.tvProfileBloodGroup.getText().toString();
                 profilePhoto = "http://images.com/photo123.jpg";
                 signature = "http://images.com/signature.jpg";
 
@@ -135,16 +144,95 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
 //                newInsuarance = binding.tvProfileInsuarance.getText().toString();
 //                newEmerganceContact = binding.tvProfileEmergencyContact.getText().toString();
 //                newBloodGroup  = binding.tvProfileBloodGroup.getText().toString();
+                if(userType.equalsIgnoreCase(ConstantsUtils.provider))
+                {
+                    updateProfileProviderData(newName, newPhone,newEmail,newDOB,newGender,profilePhoto , signature);
 
-                updateProfileData(newName, newPhone,newEmail,newDOB,newGender,profilePhoto , signature);
-
+                }
+                else
+                    updateProfilePatientData(newName, newPhone,newEmail,newDOB,newGender,newIdentifier , newAddress , newBloodGroup ,profilePhoto);
             }
         });
 
     }
 
-    private void updateProfileData(String newName, String newPhone, String newEmail, String newDOB, String newGender, String profilePic , String signature) {
+    private void updateProfilePatientData( String newName, String newPhone, String newEmail, String newDOB, String newGender,String newIdentifier, String newAddress, String newBloodGroup , String photo) {
+        String firstName = newName.split(" ")[0];
+        String middleName = newName.split(" ")[1];
+        String lastName = newName.split(" ")[2];
 
+        String line1 = newAddress.split(" ")[0];
+        String line2 = newAddress.split(" ")[1];
+        String city = newAddress.split(" ")[2];
+        String state = newAddress.split(" ")[3];
+        String country = newAddress.split(" ")[4];
+        JsonObject jsonObjectMain = new JsonObject();
+
+        JsonObject jsonObjectGender = new JsonObject();
+        jsonObjectGender.addProperty("code" , newGender);
+        jsonObjectGender.addProperty("display" , newGender);
+
+        JsonArray jsonArrayIdentifier = new JsonArray();
+        JsonObject jsonObjectIdentifier  = new JsonObject();
+        jsonObjectIdentifier.addProperty("type" , newIdentifier);
+        jsonObjectIdentifier.addProperty("value" , newIdentifier);
+        jsonArrayIdentifier.add(jsonObjectIdentifier);
+
+        JsonObject addressObject =  new JsonObject();
+        addressObject.addProperty("line1" , line1);
+        addressObject.addProperty("line2" , line2);
+        addressObject.addProperty("city" , city);
+        addressObject.addProperty("state" , state);
+        addressObject.addProperty("country" , country);
+
+        JsonObject bloodObject =  new JsonObject();
+        bloodObject.addProperty("code" , newBloodGroup );
+        bloodObject.addProperty("display" , newBloodGroup);
+
+        jsonObjectMain.addProperty("first_name" , firstName);
+        jsonObjectMain.addProperty("middle_name" , middleName);
+        jsonObjectMain.addProperty("last_name" , lastName);
+        jsonObjectMain.addProperty("email" , newEmail);
+        jsonObjectMain.addProperty("phone" , newPhone);
+        jsonObjectMain.addProperty("birth_date" , DateFormatted(newDOB).concat(ConstantsUtils.DATE_STRING));
+        jsonObjectMain.add("gender" , jsonObjectGender);
+        jsonObjectMain.addProperty("photo" , photo);
+        jsonObjectMain.add("identifier" , jsonArrayIdentifier);
+        jsonObjectMain.add("address" , addressObject);
+        jsonObjectMain.add("blood_group" , bloodObject);
+
+    Call<ProfilePatientResponse> call = PatientServiceApi.updateProfileDataPatient("application/json" , jsonObjectMain , PreferenceUtils.retriveData(this , "PUUID_PATIENT"), ConstantsUtils.API_KEY);
+    call.enqueue(new Callback<ProfilePatientResponse>() {
+        @Override
+        public void onResponse(Call<ProfilePatientResponse> call, Response<ProfilePatientResponse> response) {
+            if(response.code()==200) {
+                BaseUtils.showToast(ProfileInfoActivity.this, "Profile Updated");
+                onBackPressed();
+
+            }
+            else
+                BaseUtils.showToast(ProfileInfoActivity.this, "Profile error updating");
+        }
+
+        @Override
+        public void onFailure(Call<ProfilePatientResponse> call, Throwable t) {
+
+        }
+    });
+    }
+
+    private void updateProfileProviderData(String newName, String newPhone, String newEmail, String newDOB, String newGender, String profilePic , String signature) {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date date = null;
+        try {
+            date = sdf.parse(newDOB);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
+        String dateToDisplay = dt1.format(date);
         String firstName = newName.split(" ")[0];
         String middleName = newName.split(" ")[1];
         String lastName = newName.split(" ")[2];
@@ -152,26 +240,30 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
 
         JsonObject jsonObjectGender = new JsonObject();
         jsonObjectGender.addProperty("code" , newGender);
+        jsonObjectGender.addProperty("display" , newGender);
 
         jsonObjectMain.addProperty("first_name" , firstName);
         jsonObjectMain.addProperty("middle_name" , middleName);
         jsonObjectMain.addProperty("last_name" , lastName);
         jsonObjectMain.addProperty("email" , newEmail);
         jsonObjectMain.addProperty("phone" , newPhone);
-        jsonObjectMain.addProperty("birth_date" , newDOB);
+        jsonObjectMain.addProperty("birth_date" , dateToDisplay);
         jsonObjectMain.add("gender" , jsonObjectGender);
         jsonObjectMain.addProperty("photo" , profilePic);
         jsonObjectMain.addProperty("signature" , signature);
 
-        Call<UpdateResponseProfile> call = mAPiService.updateProfileData("application/json" , jsonObjectMain , PreferenceUtils.retriveData(this , "PUUID"), ConstantsUtils.API_KEY);
+        Call<UpdateResponseProfile> call = ProviderServiceApi.updateProfileDataProvider("application/json" , jsonObjectMain , PreferenceUtils.retriveData(this , "PUUID"), ConstantsUtils.API_KEY);
         call.enqueue(new Callback<UpdateResponseProfile>() {
             @Override
             public void onResponse(Call<UpdateResponseProfile> call, Response<UpdateResponseProfile> response) {
-                BaseUtils.showToast(ProfileInfoActivity.this,"Profile Updated");
-                Intent mIntent = getIntent();
-                finish();
-                startActivity(mIntent);
-            }
+                if(response.code()==200) {
+                    BaseUtils.showToast(ProfileInfoActivity.this, "Profile Updated");
+                    onBackPressed();
+
+                }
+                else
+                    BaseUtils.showToast(ProfileInfoActivity.this, "Profile error updating");
+                }
 
             @Override
             public void onFailure(Call<UpdateResponseProfile> call, Throwable t) {
@@ -182,6 +274,20 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
 
     }
 
+    private String DateFormatted(String dob)
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date date = null;
+        try {
+            date = sdf.parse(dob);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat dt1 = new SimpleDateFormat(ConstantsUtils.DATE_FORMAT);
+        String dateToDisplay = dt1.format(date);
+        return dateToDisplay;
+    }
 //    private void updateData(@NotNull String newName, String newPhone, String newEmail, String newDOB, String newGender, String newIdentifier, String newLanguage, String newAddress, String newInsuarance, String newEmerganceContact, String newBloodGroup) {
 //
 //        String firstName = newName.split(" ")[0];
@@ -257,11 +363,11 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
                     @Override
                     public void onClick(View v) {
                         Calendar newCalendar = dateSelected;
-                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-mm-yyyy");
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
                         DatePickerDialog datePickerDialog = new DatePickerDialog(ProfileInfoActivity.this, new DatePickerDialog.OnDateSetListener() {
 
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                dateSelected.set(year, monthOfYear+1, dayOfMonth);
+                                dateSelected.set(year, monthOfYear, dayOfMonth);
                                 binding.tvProfileDate.setText(dateFormatter.format(dateSelected.getTime()));
                             }
 
@@ -297,6 +403,3 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
         }
     }
 }
-
-
-

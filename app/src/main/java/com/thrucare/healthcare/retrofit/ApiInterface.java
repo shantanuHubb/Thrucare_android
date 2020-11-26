@@ -393,8 +393,8 @@ public interface ApiInterface {
                                                                  @Header("x-api-key") String keyValue );
     //profile update data provider
     @PUT("{puuid}")
-    Call<UpdateResponseProfile> updateProfileData(@Header("Content-Type") String value, @Body JsonObject jsonObject, @Path("puuid") String puuid,
-                                                  @Header("x-api-key") String keyValue);
+    Call<UpdateResponseProfile> updateProfileDataProvider(@Header("Content-Type") String value, @Body JsonObject jsonObject, @Path("puuid") String puuid,
+                                                          @Header("x-api-key") String keyValue);
 
     //PATIENT API CALLING
 
@@ -406,6 +406,11 @@ public interface ApiInterface {
     @GET("{puuid}")
     Call<ProfilePatientResponse> getPatientProfile(@Header("Content-Type") String contentType, @Path("puuid") String puuid,
                                                    @Header("x-api-key") String keyValue );
+    //profile update data provider
+    @PUT("{puuid}")
+    Call<ProfilePatientResponse> updateProfileDataPatient(@Header("Content-Type") String value, @Body JsonObject jsonObject, @Path("puuid") String puuid,
+                                                          @Header("x-api-key") String keyValue);
+
 
     //patient insurance add data
     @POST("{puuid}/insurances")

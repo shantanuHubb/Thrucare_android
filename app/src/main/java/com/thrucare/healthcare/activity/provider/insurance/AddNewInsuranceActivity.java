@@ -99,7 +99,7 @@ public class AddNewInsuranceActivity extends AppCompatActivity implements AddPro
         return activity;
     }
     private void getProductInsurancePayerApiCalling() {
-        Call<ReportCategory.ResponseReportCategory> call  = mApisService.getProductInsurancePayer();
+        Call<ReportCategory.ResponseReportCategory> call = mApisService.getProductInsurancePayer();
 
         call.enqueue(new Callback<ReportCategory.ResponseReportCategory>() {
             @Override

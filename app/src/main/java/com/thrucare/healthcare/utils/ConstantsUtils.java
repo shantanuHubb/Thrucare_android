@@ -71,6 +71,8 @@ public class ConstantsUtils {
     public static String API_KEY = "Iwwr8CykbG9OK5TYbs8fa3D8lM8YE31YgpeuhEU7";
     public static final String DATE_FORMAT = "yyyy-MM-dd";
 
+    public static final String DATE_STRING = "T00:00:00.000Z";
+
 
 
 }

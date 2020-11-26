@@ -265,10 +265,10 @@ public class RegistrationActivity extends AppCompatActivity {
         genderObject.addProperty("display" , gender);
 
         JsonObject addressObject =  new JsonObject();
-        addressObject.addProperty("line1" , "1234 One St");
-        addressObject.addProperty("line2" , "1234 One St");
+        addressObject.addProperty("line1" , "1234");
+        addressObject.addProperty("line2" , "OneSt");
         addressObject.addProperty("city" , "Gwalior");
-        addressObject.addProperty("state" , "madhya pradesh");
+        addressObject.addProperty("state" , "MadhyaPradesh");
         addressObject.addProperty("country" , "india");
 
         JsonObject bloodObject =  new JsonObject();
