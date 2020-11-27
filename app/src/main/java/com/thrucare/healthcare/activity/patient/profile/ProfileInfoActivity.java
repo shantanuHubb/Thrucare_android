@@ -398,7 +398,7 @@ public class ProfileInfoActivity extends AppCompatActivity implements OnClickLis
                 break;
 
             case R.id.tv_profile_emergency_contact:
-                startActivity(new Intent(this , EmergencyContactActivity.class));
+                startActivity(new Intent(this , EmergencyContactListActivity.class));
                 break;
         }
     }

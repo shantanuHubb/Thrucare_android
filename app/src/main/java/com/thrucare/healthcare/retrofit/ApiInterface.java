@@ -41,6 +41,8 @@ import com.thrucare.healthcare.pojo.ReportCategory;
 import com.thrucare.healthcare.pojo.ResponseMedicationStatusAPI;
 import com.thrucare.healthcare.pojo.VisionList;
 import com.thrucare.healthcare.pojo.modelClasses.PatientAddInsurance;
+import com.thrucare.healthcare.pojo.modelClasses.PatientEmergencyContact;
+import com.thrucare.healthcare.pojo.modelClasses.PatientEmergencyContactList;
 import com.thrucare.healthcare.pojo.modelClasses.PatientInsuranceList;
 import com.thrucare.healthcare.pojo.modelClasses.PatientRegister;
 import com.thrucare.healthcare.pojo.modelClasses.ProfileDataResponse;
@@ -420,4 +422,14 @@ public interface ApiInterface {
     @GET("{puuid}/insurances")
     Call<PatientInsuranceList> getInsuranceListPatient(@Path("puuid") String puuid,
                                                 @Header("x-api-key") String keyValue );
+
+    //Patient Add Emergency contact
+    @POST("{puuid}/contacts")
+    Call<PatientEmergencyContact> savePatientEmergencyContact(@Header("Content-Type") String contentType,
+                                                              @Body JsonObject jsonObject  , @Path("puuid") String puuid  , @Header("x-api-key") String keyValue);
+
+    //Patient Emergency Contact List
+    @GET("{puuid}/contacts")
+    Call<PatientEmergencyContactList> getPatientEmergencyContact(@Path("puuid") String puuid  ,
+                                                                 @Header("x-api-key") String keyValue);
  }

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thrucare.healthcare">
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,12 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.provider.insurance.InsuranceListActivity"></activity>
-        <activity android:name=".activity.provider.quotation.QuotationListActivity"></activity>
+        <activity android:name=".activity.patient.profile.EmergencyContactListActivity"></activity>
+        <activity android:name=".activity.provider.insurance.InsuranceListActivity" />
+        <activity android:name=".activity.provider.quotation.QuotationListActivity" />
         <activity android:name=".awsChime.VideoActivity" />
         <activity android:name=".activity.patient.bookAppointment.StepOneAppointmentActivity" />
         <activity android:name=".activity.provider.addReferralOrder.AddNewReferralActivity" />
-        <activity android:name=".activity.patient.profile.EmergencyContactActivity" />
+        <activity android:name=".activity.patient.profile.AddEmergencyContactActivity" />
         <activity android:name=".activity.provider.addImnunization.AddNewImmunizationActivity" />
         <activity android:name=".activity.patient.immunization.ImmunizationActivity" />
         <activity android:name=".activity.provider.addVision.EyeVisionActivity" />
@@ -68,7 +65,6 @@
         <activity
             android:name=".activity.patient.bookAppointment.MapsActivity"
             android:label="@string/title_activity_maps" />
-
         <activity android:name=".activity.patient.bookAppointment.ProviderFilterActivity" />
         <activity android:name=".activity.provider.AllergiesSearchActivity" />
         <activity
@@ -101,6 +97,7 @@
         </activity>
         <activity android:name=".activity.commanActivity.RegistrationActivity" />
         <activity android:name=".activity.commanActivity.LoginActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
