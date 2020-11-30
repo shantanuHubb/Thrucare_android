@@ -390,6 +390,3 @@ public class AddNewInsuranceActivity extends AppCompatActivity implements AddPro
 
     }
 
-
-
-    
