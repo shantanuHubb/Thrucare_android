@@ -76,6 +76,7 @@ public class PatientHomeActivity extends AppCompatActivity  {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_diagnosis,
                 R.id.nav_medication, R.id.nav_allergies, R.id.nav_family_history,
                 R.id.nav_social_history, R.id.nav_provider_appointments, R.id.nav_order,
+                R.id.nav_provider_service,
                 R.id.nav_medical_report , R.id.nav_dependents , R.id.nav_immunization , R.id.nav_provider_staff)
                 .setDrawerLayout(drawer)
                 .build();

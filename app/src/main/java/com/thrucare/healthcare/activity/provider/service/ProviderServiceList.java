@@ -102,7 +102,7 @@ public class ProviderServiceList {
             return role;
         }
 
-        public void setRole(mList<Role> role) {
+        public void setRole(List<Role> role) {
             this.role = role;
         }
 

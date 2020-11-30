@@ -13,11 +13,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.rilixtech.CountryCodePicker;
 import com.thrucare.healthcare.R;
 import com.thrucare.healthcare.pojo.modelClasses.PatientRegister;
 import com.thrucare.healthcare.pojo.modelClasses.ProviderRegister;
@@ -34,6 +36,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.widget.AppCompatEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,6 +48,9 @@ public class RegistrationActivity extends AppCompatActivity {
     List<String> listGender   = new ArrayList<>();
     private Calendar myCalendar;
     private ProgressDialog progressDialog;
+    private CountryCodePicker ccp;
+    private EditText edtPhoneNumber;
+
 
 
     @Override
@@ -58,13 +64,11 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(view);
         getSupportActionBar().hide();
 
-
         listGender.add("Male");
         listGender.add("Female");
-
-
         //progress dialog
         progressDialogue();
+
         // get intent and set value according the user type
         getIntentValue();
 
@@ -77,6 +81,16 @@ public class RegistrationActivity extends AppCompatActivity {
         // mobile number and flag
 
         getFlagOfCountryListener();
+
+        //country code library for getting +91
+        countryCode();
+    }
+
+    private String countryCode() {
+        ccp = binding.ccp;
+        edtPhoneNumber = binding.editEnterPhone;
+        ccp.registerPhoneNumberTextView(edtPhoneNumber);
+       return ccp.getFullNumberWithPlus();
     }
 
     private void progressDialogue() {
@@ -190,13 +204,11 @@ public class RegistrationActivity extends AppCompatActivity {
         binding.btnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //signUpApiCalling();
-
                 String first_name = binding.editFirstName.getText().toString().trim();
                 String middle_name = binding.editMiddleName.getText().toString().trim();
                 String last_name = binding.editLastName.getText().toString().trim();
                 String email = binding.editEnterEmail.getText().toString().trim();
-                String phone = "+012223334444";
+                String phone = ccp.getFullNumberWithPlus();
                 String photo = "url";
                 String bloodGroup = "Blood group A";
                 String dobPatient = binding.editDob.getText().toString().concat("T00:00:00.000Z");
@@ -279,7 +291,7 @@ public class RegistrationActivity extends AppCompatActivity {
         jsonObject.addProperty("middle_name", middle_name);
         jsonObject.addProperty("last_name", last_name);
         jsonObject.addProperty("email", email);
-        jsonObject.addProperty("phone", phone);
+        jsonObject.addProperty("phone", countryCode());
         jsonObject.addProperty("birth_date", dob);
         jsonObject.addProperty("photo", photo);
         jsonObject.add("identifier" , jsonArrayIdentifier);

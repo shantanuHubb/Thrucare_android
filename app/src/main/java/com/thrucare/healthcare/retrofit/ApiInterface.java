@@ -3,6 +3,7 @@ package com.thrucare.healthcare.retrofit;
 import com.google.gson.JsonObject;
 import com.thrucare.healthcare.activity.patient.myAppointment.MyAppointmentsModel;
 import com.thrucare.healthcare.activity.provider.insurance.InsuranceListActivity;
+import com.thrucare.healthcare.activity.provider.service.ProviderServiceList;
 import com.thrucare.healthcare.pojo.AddInsurance;
 import com.thrucare.healthcare.pojo.ConfirmPaymentResponse;
 import com.thrucare.healthcare.pojo.DependentsList;
@@ -398,11 +399,17 @@ public interface ApiInterface {
     Call<UpdateResponseProfile> updateProfileDataProvider(@Header("Content-Type") String value, @Body JsonObject jsonObject, @Path("puuid") String puuid,
                                                           @Header("x-api-key") String keyValue);
 
+    //provider service API
+    @GET("{puuid}/service-assignments")
+    Call<ProviderServiceList> getProviderServiceCall(@Header("Content-Type") String contentType, @Path("puuid") String puuid,
+                                                     @Header("x-api-key") String keyValue);
+
     //PATIENT API CALLING
 
     //create patient User
     @POST("https://a20rhqyk4c.execute-api.us-east-1.amazonaws.com/develop/patients/v1")
     Call<PatientRegister> createUserPatient(@Header ("Content-Type" ) String value, @Body JsonObject jsonObject , @Header("x-api-key") String keyValue);
+
 
     //Patient profile data
     @GET("{puuid}")
@@ -432,4 +439,8 @@ public interface ApiInterface {
     @GET("{puuid}/contacts")
     Call<PatientEmergencyContactList> getPatientEmergencyContact(@Path("puuid") String puuid  ,
                                                                  @Header("x-api-key") String keyValue);
+
+
+
+
  }

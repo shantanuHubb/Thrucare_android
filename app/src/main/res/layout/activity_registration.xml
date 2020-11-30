@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/colorAccent"
@@ -122,6 +123,7 @@
                     android:padding="10dp"
                     android:background="@drawable/edittext_background"
                     android:maxLines="1"
+                    android:inputType="textEmailAddress"
                     android:hint="@string/enter_email"
                     android:maxLength="50"
                     android:layout_height="45dp" />
@@ -139,22 +141,48 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!--<com.lamudi.phonefield.PhoneInputLayout
-                        android:id="@+id/phone_input_layout"
-                        android:layout_width="0dp"
-                        android:background="@color/white"
-                        android:layout_weight=".2"
-                        android:layout_marginEnd="10dp"
-                        android:layout_height="wrap_content" />-->
-                    <!--<com.lamudi.phonefield.PhoneEditText
-                        android:id="@+id/edit_text"
-                        android:layout_width="0dp"
-                        android:inputType="number"
-                        android:paddingStart="10dp"
-                        android:layout_marginStart="10dp"
+                    <com.rilixtech.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        app:ccp_defaultNameCode="IN"
+                        app:ccp_defaultCode="91"
+                        app:ccp_textSize="18sp"
+                        android:paddingTop="10dp"
+                        app:ccp_enablePhoneAutoFormatter="true"
+                        android:textAlignment="center"
                         android:background="@drawable/edittext_background"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content" />-->
+                        android:layout_height="45dp" />
+
+                    <EditText
+                        android:id="@+id/edit_enter_phone"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:padding="10dp"
+                        android:background="@drawable/edittext_background"
+                        android:maxLines="1"
+                        android:hint="@string/enter_phone"
+                        android:maxLength="50"
+                        android:inputType="number"
+                        android:layout_height="45dp" />
+
+
+<!--                    &lt;!&ndash;<com.lamudi.phonefield.PhoneInputLayout-->
+<!--                        android:id="@+id/phone_input_layout"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:layout_weight=".2"-->
+<!--                        android:layout_marginEnd="10dp"-->
+<!--                        android:layout_height="wrap_content" />&ndash;&gt;-->
+<!--                    &lt;!&ndash;<com.lamudi.phonefield.PhoneEditText-->
+<!--                        android:id="@+id/edit_text"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:inputType="number"-->
+<!--                        android:paddingStart="10dp"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:background="@drawable/edittext_background"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_height="wrap_content" />&ndash;&gt;-->
                 </LinearLayout>
                 <TextView
                     android:layout_marginTop="15dp"

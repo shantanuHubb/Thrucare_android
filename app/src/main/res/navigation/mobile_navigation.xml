@@ -85,4 +85,10 @@
         android:name="com.thrucare.healthcare.activity.provider.staff.StaffFragment"
         android:label="Staff"
         tools:layout="@layout/fragment_staff" />
+
+    <fragment
+        android:id="@+id/nav_provider_service"
+        android:name="com.thrucare.healthcare.activity.provider.service.ProviderServiceFragment"
+        android:label="Service"
+        tools:layout="@layout/fragment_provider_service" />
 </navigation>

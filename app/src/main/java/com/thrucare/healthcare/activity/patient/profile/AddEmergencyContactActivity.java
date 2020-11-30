@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.gson.JsonObject;
+import com.rilixtech.CountryCodePicker;
 import com.thrucare.healthcare.R;
 import com.thrucare.healthcare.databinding.ActivityEmergencyContactBinding;
 import com.thrucare.healthcare.pojo.EmergencyContactList;
@@ -29,6 +31,8 @@ public class AddEmergencyContactActivity extends AppCompatActivity implements Vi
 
     private ActivityEmergencyContactBinding binding;
     private ApiInterface PatientServiceApi;
+    private CountryCodePicker ccp;
+    private EditText edtPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +48,16 @@ public class AddEmergencyContactActivity extends AppCompatActivity implements Vi
          intiView();
        // getEmergencyContactDetail();
         setDisableClickable();
+       //countryCode
+        countryCode();
 
+    }
 
+    private String countryCode() {
+        ccp = binding.ccp;
+        edtPhoneNumber = binding.edtPhoneNumnerEmergency;
+        ccp.registerPhoneNumberTextView(edtPhoneNumber);
+        return ccp.getFullNumberWithPlus();
     }
 
     private void intiView() {
@@ -127,7 +139,7 @@ public class AddEmergencyContactActivity extends AppCompatActivity implements Vi
         jsonObjectMain.addProperty("middle_name" , binding.edtMiddleNameEmergency.getText().toString());
         jsonObjectMain.addProperty("last_name" , binding.edtLastNameEmergency.getText().toString());
         jsonObjectMain.addProperty("email" , binding.edtEmailAddressEmergency.getText().toString());
-        jsonObjectMain.addProperty("phone" , binding.edtPhoneNumnerEmergency.getText().toString());
+        jsonObjectMain.addProperty("phone" , countryCode());
 
         JsonObject jsonObjectRelationShip = new JsonObject();
         jsonObjectRelationShip.addProperty("code" , "C");

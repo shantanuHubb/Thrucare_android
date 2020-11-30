@@ -142,16 +142,38 @@
                     android:text="Contact Number"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.rilixtech.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    app:ccp_defaultNameCode="IN"
+                    app:ccp_defaultCode="91"
+                    app:ccp_textSize="18sp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="10dp"
+                    app:ccp_enablePhoneAutoFormatter="true"
+                    android:textAlignment="center"
+                    android:background="@drawable/edittext_background"
+                    android:layout_height="45dp" />
 
                 <EditText
                     android:id="@+id/edt_phone_numner_emergency"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
                     android:background="@drawable/edittext_background"
-                    android:maxLength="25"
                     android:maxLines="1"
-                    android:padding="10dp"/>
+                    android:hint="@string/enter_phone"
+                    android:maxLength="50"
+                    android:inputType="number"
+                    android:layout_height="45dp" />
+            </LinearLayout>
+
             </LinearLayout>
         </ScrollView>    </LinearLayout>
 
